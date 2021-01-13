@@ -2,6 +2,7 @@ const display = document.querySelector(".clock-display");
 const progress = document.querySelector(".clock-progress-bar");
 const face = document.querySelector(".clock-face");
 
+function getCurrentTime() {
 let date = new Date();
 let hours = date.getHours();
 let minutes = date.getMinutes();
@@ -19,4 +20,9 @@ hours = checkTime(hours);
 minutes = checkTime(minutes);
 seconds = checkTime(seconds);
 
-console.log(`${hours}:${minutes}:${seconds}`);
+    console.log(`#${hours}${minutes}${seconds}`);
+    console.log(`${hours}:${minutes}:${seconds}`);
+}
+setInterval(getCurrentTime, 1000);
+
+//Hex code
