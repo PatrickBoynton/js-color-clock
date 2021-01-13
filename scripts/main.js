@@ -7,6 +7,16 @@ let hours = date.getHours();
 let minutes = date.getMinutes();
 let seconds = date.getSeconds();
 
-let time  = `${hours}:${minutes}:${seconds}`;
+// Found this nifty method on SO.
+function checkTime(n) {
+    if (n < 10) {
+        n = "0" + 1;
+    }
+    return n;
+}
 
-console.log(time);
+hours = checkTime(hours);
+minutes = checkTime(minutes);
+seconds = checkTime(seconds);
+
+console.log(`${hours}:${minutes}:${seconds}`);
