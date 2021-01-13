@@ -3,24 +3,30 @@ const progress = document.querySelector(".clock-progress-bar");
 const face = document.querySelector(".clock-face");
 
 const checkTime = timeInterval => (timeInterval < 10) ? ("0" + timeInterval) : timeInterval;
+let date;
+let hours;
+let minutes;
+let seconds;
 
-
+let time;
+let hexCode;
 
 function getCurrentTime() {
-    let date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
+    date = new Date();
+    hours = date.getHours();
+    minutes = date.getMinutes();
+    seconds = date.getSeconds();
 
-    let time = `${checkTime(hours)}:${checkTime(minutes)}:${checkTime(seconds)}`;
-    let hexCode = `#${checkTime(hours)}${checkTime(minutes)}${checkTime(seconds)}`;
+    time = `${checkTime(hours)}:${checkTime(minutes)}:${checkTime(seconds)}`;
+    hexCode = `#${checkTime(hours)}${checkTime(minutes)}${checkTime(seconds)}`;
 
     display.innerHTML = time;
     face.style.backgroundColor = hexCode;
-
-    console.log(time);
-    console.log(hexCode);
 }
+
+display.addEventListener("mouseover", () => {
+    display.innerHTML = hexCode;
+});
 
 getCurrentTime();
 
