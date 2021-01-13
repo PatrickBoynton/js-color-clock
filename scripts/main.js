@@ -2,11 +2,11 @@ const display = document.querySelector(".clock-display");
 const progress = document.querySelector(".clock-progress-bar");
 const face = document.querySelector(".clock-face");
 
-const date = new Date();
-const hours = date.getHours();
-const minutes = date.getMinutes();
-const seconds = date.getSeconds();
+let date = new Date();
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
 
-const time  = `${hours}:${minutes}:${seconds}`;
+let time  = `${hours}:${minutes}:${seconds}`;
 
 console.log(time);
